@@ -3,3 +3,8 @@
 Simple [[https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle][sierpinski triangle]] GUI program showcasing Glint utilising the [[https://www.raylib.com/][raylib]] library.
 
 [[https://github.com/LensPlaysGames/LensorCompilerCollection][Lensor Compiler Collection]]
+
+#+begin_src shell
+  cmake -B bld
+  cmake --build bld --parallel
+#+end_src
