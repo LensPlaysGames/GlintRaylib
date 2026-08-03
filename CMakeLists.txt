@@ -1,14 +1,15 @@
-cmake_minimum_required(VERSION 3.24)
+cmake_minimum_required(VERSION 3.29)
 
 include(FetchContent)
 FetchContent_Declare(
-  lcc
-  GIT_REPOSITORY https://github.com/LensPlaysGames/LensorCompilerCollection.git
+  lcc_cmake
+  GIT_REPOSITORY https://github.com/LensPlaysGames/lcc_cmake.git
   GIT_TAG main
-  EXCLUDE_FROM_ALL
+  EXCLUDE_FROM_ALL # CMake >= 3.28
 )
-FetchContent_MakeAvailable(lcc)
-list(APPEND CMAKE_MODULE_PATH "${lcc_SOURCE_DIR}/cmake/")
+FetchContent_MakeAvailable(lcc_cmake)
+list(APPEND CMAKE_MODULE_PATH "${lcc_cmake_SOURCE_DIR}")
+include(lcc_setup)
 
 # Export compilation database in JSON format (for language servers).
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
